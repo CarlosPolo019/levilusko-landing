@@ -1,0 +1,399 @@
+@font-face {
+  font-family: inter-regular;
+  src: url(../fonts/inter-regular.ttf);
+}
+
+@font-face {
+  font-family: inter-bold;
+  src: url(../fonts/inter-bold.ttf);
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: inter-regular;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  outline: 0;
+  padding: 0;
+}
+
+button:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+b {
+  font-family: inter-bold;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#loader-indicator {
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid #000000;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 0.75s linear infinite;
+  animation: spin 0.75s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60px;
+  padding: 10px 40px;
+}
+
+header img.icon {
+  width: 60px;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+header img.menu {
+  width: 40px;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-family: inter-bold;
+  
+}
+
+header h3 span {
+  font-family: inter-regular;
+}
+
+header .divider {
+  flex: 1;
+  height: 3px;
+  background-color: #000000;
+  margin: 0 20px;
+}
+
+#menu {
+  position: fixed;
+  background-color: black;
+  color: white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  top: -100%;
+  transition: top 0.5s;
+}
+
+#menu.open {
+  top: 0;
+}
+
+#menu .header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60px;
+  padding: 10px 40px;
+}
+
+#menu .header .icon {
+  width: 60px;
+  -o-object-fit: contain;
+  object-fit: contain;
+  filter: invert(100%) sepia(0%) saturate(7478%) hue-rotate(297deg) brightness(95%) contrast(105%);
+}
+
+#menu .header .menu-button {
+  width: 40px;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+#menu .header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-family: inter-bold;
+}
+
+#menu .header h3 span {
+  font-family: inter-regular;
+}
+
+#menu .header .divider {
+  flex: 1;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 0 20px;
+}
+
+#menu .links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin-bottom: 80px;
+}
+
+#menu .links a {
+  display: flex;
+  flex-direction: column;
+}
+
+#menu .links a:hover {
+  transform: scale(1.5);
+}
+
+#menu .links a:not(:first-child) {
+  margin-left: 70px;
+}
+
+#menu .links a small {
+  font-size: 10px;
+}
+
+#menu .links a b {
+  font-size: 25px;
+}
+
+body section#first {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 160px);
+  padding-bottom: 80px;
+}
+
+body section#first img {
+  width: 40px;
+  -o-object-fit: contain;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+body section#first h1 {
+  margin: 30px 0;
+  font-size: 115px;
+  font-family: inter-bold;
+}
+
+body section#first h1 span {
+  font-family: inter-regular;
+}
+
+body section#first > span {
+  line-height: 30px;
+}
+
+body section#second {
+  display: flex;
+}
+
+.parallax {
+  background-image: url(../images/banner.png);
+  min-height: 80vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body section#second img {
+  width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+body section#third {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 220px 0;
+}
+
+body section#third > * {
+  max-width: 30%;
+  width: 100%;
+}
+
+body section#third > :not(:first-child) {
+  margin-left: 80px;
+}
+
+body section#third > b {
+  font-size: 24px;
+  line-height: 40px;
+}
+
+body section#third > div > b {
+  font-size: 115px;
+}
+
+body section#third > div > span {
+  font-size: 18px;
+  line-height: 25px;
+  display: block;
+  margin-top: 150px;
+}
+
+body section#fourth {
+  display: flex;
+  flex-direction: row;
+  overflow-y: auto;
+  padding: 30px 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  transform-origin: right top;
+
+}
+
+body section#fourth::-webkit-scrollbar {
+  display: none;
+}
+
+body section#fourth img {
+  height: 660px;
+  width: 440px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border: 1px solid #707070;
+}
+
+body section#fourth img:not(:first-child) {
+  margin-left: 20px;
+}
+
+body section#fifth {
+  display: flex;
+  width: 100%;
+  position: relative;
+  animation-duration: 2s;
+}
+
+body section#fifth .books {
+  width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+body section#fifth .typewriter {
+  position: absolute;
+  right: 100px;
+  top: 115px;
+  font-size: 38px;
+  color: white;
+}
+
+body section#fifth .typewriter b {
+  overflow: hidden;
+  border-right: 0.15em solid white;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 2s steps(40, end), blink-caret 1s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+body section#fifth .arrow {
+  position: absolute;
+  right: 90px;
+  bottom: 60px;
+  padding: 10px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 200px 40px 100px 40px;
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+footer hr {
+  background-color: #ffffff;
+  border: none;
+  height: 1px;
+  width: 100%;
+}
+
+footer .wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer .wrapper .links a:not(:first-child) {
+  margin-left: 50px;
+}
+
+
